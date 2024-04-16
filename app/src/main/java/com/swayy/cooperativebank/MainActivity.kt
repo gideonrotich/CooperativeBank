@@ -2,6 +2,7 @@ package com.swayy.cooperativebank
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalAnimationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window, false)
+//        WindowCompat.setDecorFitsSystemWindows(window, false)
 
         setContent {
             CooperativeBankTheme {
@@ -47,7 +48,8 @@ class MainActivity : ComponentActivity() {
                             composable(route = Route.HOME) {
 
                                 LoginScreen(navigateToWelcomeScreen = {
-                                    navController.currentBackStackEntry?.savedStateHandle?.set(key = "test",value = it)
+                                    //saving the info using saved state handle
+                                    navController.currentBackStackEntry?.savedStateHandle?.set(key = "user",value = it)
                                     navController.navigate(Route.HOME_SCREEN)
                                 })
                             }
