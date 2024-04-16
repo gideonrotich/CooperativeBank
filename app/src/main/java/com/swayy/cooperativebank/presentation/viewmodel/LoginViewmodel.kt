@@ -86,7 +86,7 @@ class LoginViewmodel @Inject constructor(
 
                 is Resource.Success -> {
                     Log.e("success","success")
-                    onSuccessLogin(result.data!!)
+
                     _state.value = login.value.copy(
                         isLoading = false,
                         login = result.data

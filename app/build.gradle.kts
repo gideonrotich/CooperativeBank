@@ -101,7 +101,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.logging.interceptor)
     implementation(libs.okhttp)
-
+    implementation("androidx.compose.material:material-icons-extended:1.6.0")
 
     // Gson
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")

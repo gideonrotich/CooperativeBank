@@ -22,6 +22,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
@@ -192,11 +193,19 @@ private fun SignInScreenContent(
                                     onCurrentEmailTextChange(it)
                                 },
                                 label = {
-                                    Text(text = "Email")
+                                    Text(text = "Username")
                                 },
                                 keyboardOptions = KeyboardOptions(
                                     keyboardType = KeyboardType.Text
                                 ),
+                                leadingIcon = {
+                                    Icon(
+                                        imageVector = Icons.Default.Person,
+                                        contentDescription = "",
+                                        tint = Color.White
+                                    )
+
+                                },
                                 isError = emailState.error != null,
                                 colors = TextFieldDefaults.outlinedTextFieldColors(
                                     focusedBorderColor = Color.White,
@@ -239,6 +248,14 @@ private fun SignInScreenContent(
                                     PasswordVisualTransformation()
                                 } else {
                                     VisualTransformation.None
+                                },
+                                leadingIcon = {
+                                    Icon(
+                                        imageVector = Icons.Default.Person,
+                                        contentDescription = "",
+                                        tint = Color.White
+                                    )
+
                                 },
                                 trailingIcon = {
                                     IconButton(
@@ -324,7 +341,7 @@ private fun SignInScreenContent(
                         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
                             Spacer(modifier = Modifier.height(16.dp))
                             if (loginState.isLoading) {
-                                CircularProgressIndicator()
+//                                CircularProgressIndicator()
                             }
                         }
                     }
